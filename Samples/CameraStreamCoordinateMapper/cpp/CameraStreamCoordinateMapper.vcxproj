@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SharedContentDir>$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), LICENSE))\SharedContent</SharedContentDir>
+  </PropertyGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{DAFBEBAE-54D4-52FF-BDE0-2776ED020A51}</ProjectGuid>
+    <ProjectGuid>{7C3FD9BB-00D7-5E91-A298-28ACE319A4EB}</ProjectGuid>
     <Keyword>DirectXApp</Keyword>
     <RootNamespace>CameraStreamCoordinateMapper</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
@@ -9,8 +12,8 @@
     <AppContainerApplication>true</AppContainerApplication>
     <ApplicationType>Windows Store</ApplicationType>
     <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
-    <WindowsTargetPlatformMinVersion>10.0.17134.0</WindowsTargetPlatformMinVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.18362.0</WindowsTargetPlatformMinVersion>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -42,37 +45,31 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v141</PlatformToolset>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v141</PlatformToolset>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v141</PlatformToolset>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -86,7 +83,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <IncludePath>$(VC_IncludePath);$(UniversalCRT_IncludePath);$(WindowsSDK_IncludePath);..\..\..\SharedContent\cpp</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(UniversalCRT_IncludePath);$(WindowsSDK_IncludePath);$(SharedContentDir)\cpp</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <Link>
@@ -291,25 +288,25 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\SharedContent\media\microsoft-sdk.png">
+    <Image Include="$(SharedContentDir)\media\microsoft-sdk.png">
       <Link>Assets\microsoft-sdk.png</Link>
     </Image>
-    <Image Include="..\..\..\SharedContent\media\smalltile-sdk.png">
+    <Image Include="$(SharedContentDir)\media\smalltile-sdk.png">
       <Link>Assets\smalltile-sdk.png</Link>
     </Image>
-    <Image Include="..\..\..\SharedContent\media\splash-sdk.png">
+    <Image Include="$(SharedContentDir)\media\splash-sdk.png">
       <Link>Assets\splash-sdk.png</Link>
     </Image>
-    <Image Include="..\..\..\SharedContent\media\squaretile-sdk.png">
+    <Image Include="$(SharedContentDir)\media\squaretile-sdk.png">
       <Link>Assets\squaretile-sdk.png</Link>
     </Image>
-    <Image Include="..\..\..\SharedContent\media\storelogo-sdk.png">
+    <Image Include="$(SharedContentDir)\media\storelogo-sdk.png">
       <Link>Assets\storelogo-sdk.png</Link>
     </Image>
-    <Image Include="..\..\..\SharedContent\media\tile-sdk.png">
+    <Image Include="$(SharedContentDir)\media\tile-sdk.png">
       <Link>Assets\tile-sdk.png</Link>
     </Image>
-    <Image Include="..\..\..\SharedContent\media\windows-sdk.png">
+    <Image Include="$(SharedContentDir)\media\windows-sdk.png">
       <Link>Assets\windows-sdk.png</Link>
     </Image>
   </ItemGroup>

@@ -1,4 +1,22 @@
-﻿<!---
+---
+page_type: sample
+languages:
+- csharp
+- cpp
+- cppcx
+products:
+- windows
+- windows-uwp
+urlFragment: CustomCapability
+extendedZipContent:
+- path: SharedContent
+  target: SharedContent
+- path: LICENSE
+  target: LICENSE
+description: "Shows the use of custom capabilities."
+---
+
+<!---
   category: PlatformArchitecture
   samplefwlink: http://go.microsoft.com/fwlink/p/?LinkId=846904
 --->
@@ -146,22 +164,13 @@ UEFI access also requires the app to declare 'protectedApp' restricted capabilit
 
 UEFI variables can be accessed only when the app is being used by a user belonging to Administrators group.
 
-**Note** The Windows universal samples require Visual Studio 2017 to build and Windows 10 to execute.
+**Note** The Windows universal samples require Visual Studio to build and Windows 10 to execute.
  
 To obtain information about Windows 10 development, go to the [Windows Dev Center](http://go.microsoft.com/fwlink/?LinkID=532421)
 
 To obtain information about Microsoft Visual Studio and the tools for developing Windows apps, go to [Visual Studio](http://go.microsoft.com/fwlink/?LinkID=532422)
 
 ## Related topics
-
-### Samples
-
-* [IoT-GPIO](/Samples/IoT-GPIO)
-* [IoT-I2C](/Samples/IoT-I2C)
-* [IoT-SPI](/Samples/IoT-SPI)
-* [Custom HID device access](/Samples/CustomHidDeviceAccess)
-* [Custom serial device access](/Samples/CustomSerialDeviceAccess)
-* [Custom USB device access](/Samples/CustomUsbDeviceAccess)
 
 ### Reference
 
@@ -172,18 +181,24 @@ To obtain information about Microsoft Visual Studio and the tools for developing
 * [Custom Capabilities for Universal Windows Platform apps](https://msdn.microsoft.com/windows/hardware/drivers/devapps/custom-capabilities-for-universal-windows-platform-apps)
 * [Hardware access for Universal Windows Platform apps](https://msdn.microsoft.com/windows/hardware/drivers/devapps/hardware-access-for-universal-windows-platform-apps)
 
+### Related samples
+
+* [IoT-GPIO](/Samples/IoT-GPIO)
+* [IoT-I2C](/Samples/IoT-I2C)
+* [IoT-SPI](/Samples/IoT-SPI)
+* [Custom HID device access](/Samples/CustomHidDeviceAccess)
+* [Custom serial device access](/Samples/CustomSerialDeviceAccess)
+* [Custom USB device access](/Samples/CustomUsbDeviceAccess)
+* [CustomCapability sample](/archived/CustomCapability/) for JavaScript (archived)
+
 ## System requirements
 
-**Client:** Windows 10 version 1703
-
-**Server:** Windows Server 2016 Technical Preview
-
-**Phone:** Windows 10 version 1703
+* Windows 10 build 15063 or higher
 
 ## Build the sample
 
 1. If you download the samples ZIP, be sure to unzip the entire archive, not just the folder with the sample you want to build. 
-2. Start Microsoft Visual Studio 2017 and select **File** \> **Open** \> **Project/Solution**.
+2. Start Microsoft Visual Studio and select **File** \> **Open** \> **Project/Solution**.
 3. Starting in the folder where you unzipped the samples, go to the Samples subfolder, then the subfolder for this specific sample, then the subfolder for your preferred language (C++, C#, or JavaScript). Double-click the Visual Studio 2017 Solution (.sln) file.
 4. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
 
@@ -199,3 +214,7 @@ The next steps depend on whether you just want to deploy the sample or you want 
 
 - To debug the sample and then run it, press F5 or select Debug >  Start Debugging. To run the sample without debugging, press Ctrl+F5 or select Debug > Start Without Debugging. 
 - To run the "Connect to an NT service" scenario, see additional instructions above.
+
+### Modifying the sample
+
+- If you modify the sample, make sure to [change the interface ID in `RpcInterface.idl`](Service/Interface/RpcInterface.idl#L15), because interface IDs must be unique.
